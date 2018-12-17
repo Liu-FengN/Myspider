@@ -7,6 +7,11 @@ package edu.csuft.linan.myspider;
  */
 
 public class film {
+	
+	/**
+	 * 排名
+	 */
+	  int id;
    /**
     * 影片名称
     */
@@ -35,4 +40,10 @@ public class film {
      * 评价
      */
     String quote;
+
+	@Override
+	public String toString() {
+		return "film [id=" + id + ",title=" + title + ", info=" + info + ", rating=" + rating + ", num=" + num
+				+ ", poster=" + poster + ", quote=" + quote + "]";
+	}
 }

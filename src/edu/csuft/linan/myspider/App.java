@@ -26,21 +26,24 @@ public class App {
 			Document doc=Jsoup.connect(url).get();
 	//select()函数筛选数据  //Elements es=doc.select(".grid_view img");
 			Elements es=doc.select(".grid_view .item");//在有类选择器里进行查找，加“.”
-			System.out.println(es.size());
+     		System.out.println(es.size());
 			//创建一个影片的列表
 			 ArrayList<film>list=new ArrayList<>();
 			for(Element e:es)
 			{
 			//System.out.println(e.attr("src")); //"src"代表直接获取图片地址
-		
 			   film f=new film();
 				//每一部影片
-				Element t = e.select(".title").first();
-				String num=e.select(".star span").last().text();
-			    String removeNum="人评价";
-				System.out.println(t.text()+","+ num.replace(removeNum, ""));
-//				f.id
-//				f.title
+			   f.id=Integer.parseInt(e.select(".pic em").first().text());
+			   f.poster=e.select("img").first().attr("src");
+			   f.info=e.select(".bd p").first().text();
+			   f.title=e.select(".title").first().text();
+			   f.rating=Double.parseDouble(e.select(".rating_num").first().text());
+			   String num=e.select(".star span").last().text();
+			   f.num=Integer.parseInt(num.substring(0,num.length()-3));
+			   f.quote=e.select(".inq").first().text();
+			   
+			   System.out.println(f);
                list.add(f);			
 				
 			}
@@ -58,5 +61,4 @@ public class App {
 			e.printStackTrace();
 		}
 	}
-
 }
