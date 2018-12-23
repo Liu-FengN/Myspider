@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <environments default="development">
+    <environment id="development">
+    <!-- 数据源 -->
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED"> 
+       <!--驱动类的类名-->
+        <property name="driver" value="com.mysql.jdbc.Driver"/> 
+         <!--决定具体地址-->      
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/films"/>    
+        <property name="username" value="root"/>       
+        <property name="password" value="123456"/>      
+      </dataSource>   
+    </environment>  
+   </environments>  
+   <mappers>   
+     <package name="edu.csuft.linan.myspider"/>
+   </mappers>
+</configuration>

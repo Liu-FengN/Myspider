@@ -3,5 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/Project/jsoup-1.11.3.jar" sourcepath="bin/edu/csuft/linan/myspider"/>
+	<classpathentry kind="lib" path="C:/Mysql/lib/mybatis-3.4.6.jar"/>
+	<classpathentry kind="lib" path="C:/Mysql/lib/mysql-connector-java-8.0.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
